@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>The Siuslaw River</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+    <!--meta data for sharing links on Facebook-->
+	<meta property="og:title" content="The Siuslaw River"/>
+	<!--<meta property="og:url" content="http://geoviz.ceoas.oregonstate.edu/storymap/examples/2.4/video.html"/>-->
+	<meta property="og:description" content="This is an example of a storymap."/>
+	<meta property="og:image" content="img/social.jpg"/>
+    <!--add required stylesheets-->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
+	<!--leaflet css-->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.3.1/leaflet.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.12/css/all.css">
+    <!--add favicon for the web page-->
+	<link rel="shortcut icon" href="img/cropped-river-icon.png" type="image/x-icon">
+    <!--Fonts-->
+	<link href="https://fonts.googleapis.com/css?family=Lucida" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="css/storymap.2.4.css">
+	<!--add required libraries-->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.3.1/leaflet.js"></script>
+	<!--jquery-->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
+	<!--boostrap-->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
+	<!--leaflet.ajax for asynchronously adding geojson data-->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet-ajax/2.1.0/leaflet.ajax.min.js"></script>
+	<!--story map plugin-->
+	<script src="js/storymap.2.4.js"></script>
+</head>
+
+<body>
+<div id="storymap" class="container-fluid">
+	<div class="row">
+		<div class="col-sm-6 col-md-4 storymap-story">
+			<section data-scene="overview" data-background="assets/siuslawriver1a.mp4">
+				<div class="fullscreen text-center">
+
+                    <h1 class="display-4 d-flex justify-content-center">The Siuslaw River</h1>
+
+                    <small class="d-flex justify-content-center" style="color: rgba(255,255,255,0.95)">This story map
+						shows towns along the Siuslaw River
+					</small>
+				</div>
+			</section>
+
+            <section data-scene="oregon">
+                <h2>Oregon</h2>
+                <p>Oregon is a beautiful state with many different ecosystems. From the dry plains in the east, to the sharp
+                    peaks of the Cascades and fertile soils of the Willamette Valley in the west, to the rolling forested
+                    slopes of the Coast Range on the edge of the continent. </p>
+                <img src="img/oregon_flag.png" class="img-responsive img-thumbnail" alt="responsive image"
+                     alt-text="the flag of oregon">
+                <p>The Siuslaw river is located in the central Coast Range.</p>
+            </section>
+
+            <section data-scene="eugene">
+                <h2>Eugene</h2>
+                <p>Eugene lies at the southernmost part of the Willamette valley. Several miles to the west, the Coast
+                    Range rises up and separates the valley from the coast. It is in these sandstone hills that the
+                    Siuslaw's headwaters are located. </p>
+            </section>
+
+            <section data-scene="swisshome">
+                <h2>Swisshome</h2>
+                <p>Swisshome is a tiny town that can be found where the two major branches of the Siuslaw join together.
+                It was named for a local Swiss family and got its post office in 1902. </p>
+            </section>
+
+            <section data-scene="mapleton">
+                <h2>Mapleton</h2>
+                <p>Mapleton is a small town located where the Siuslaw transitions from a narrow and rocky stream
+                into a broader, tidally influenced river. The town was named for the profousion of maple trees that
+                grow there, and got its post office in 1896.</p>
+            </section>
+
+            <section data-scene="florence">
+                <h2>Florence</h2>
+                <p>Florence is a coastal town built where the Siuslaw reaches the Pacific Ocean. It is known as a
+                     good place to retire and lies at the northern end of the Oregon Dunes National Park. The sand that makes
+                    up these famous dunes was carried, in part, by the Siuslaw as it cut through the Coast Range.</p>
+            </section>
+
+            <section data-scene="end" data-background="assets/siuslawriver2a.mp4">
+				<div class="fullscreen text-center">
+					<h1 class="display-4 d-flex justify-content-center">Thanks for watching!</h1>
+				</div>
+			</section>
+
+		</div>
+		<!--map div-->
+		<div class="col-sm-6 col-md-8 storymap-map"></div>
+	</div>
+
+	<dl>
+		<dt>
+			<!--facebook icon-->
+			<a class="fab fa-facebook-square btn"
+			   href="https://facebook.com/sharer.php?u=https://aradiafarmer.github.io/usairports/index.html"
+			   target="_blank"></a>
+		</dt>
+		<dt>
+			<!--github icon-->
+			<a class="fab fa-github btn" href="https://github.com/aradiafarmer/storymap" style="top:40px"
+			   target="_blank"></a>
+		</dt>
+		<dt>
+			<!--info icon-->
+			<i class="fas fa-info-circle btn" style="top:60px" data-toggle="modal" data-target="#info-modal"></i>
+		</dt>
+	</dl>
+
+	<!--the info page-->
+	<div class="modal fade" id="info-modal" role="dialog">
+		<div class="modal-dialog modal-md">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal">&times;</button>
+					<h4 class="modal-title">About</h4>
+				</div>
+				<div class="modal-body">
+					<p>This is a web map of the Siuslaw river in Oregon. It is mainly copied from a demo for a course
+                        GEOG 371: Web Mapping provided by Oregon State University. The story map library is derived from the
+						storymap plugin for leaflet at <a>http://atlefren.github.io/storymap/</a>, and its functionality
+						relies on both leaflet and Boostrap.</p>
+					<p><b>storymap.js</b> | Released Date: 02/20/2017 | Version: 2.1 | MIT License </p>
+					<p><b> Demo author: Bo Zhao</b> | College of Earth, Ocean, Atmospheric Science | Oregon State University
+					</p>
+                    <p><b>Content author: Aradia Farmer </b> | College of Earth, Ocean, Atmospheric Science | Oregon
+                        State University
+                    </p>
+					<p>The context about the Siuslaw was based on personal knowledge of the area and Wikipedia.</p>
+					<p>The background video on the front page was captured by Woodrow Aerial
+						<a>https://www.facebook.com/WoodrowAerial/</a>. </p>
+					<p>The favicon image was acquired from <a>https://www.rebeccawaggoner.com</a></p>
+					<p>This story map uses geospatial data from mapbox, Google Earth Engine, ESRI Map, Open Street Maps
+						and Oregon Explorer.</p>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<!-- main javascript -->
+<script type="text/javascript">
+
+
+	// Create Legend Contents in html format
+	var county_legend = '<i style="background: orange; opacity: 0.5"></i><p><b>Counties</b></p>';
+	var forest_legend = '<i style="background: green; opacity: 0.5"></i><p><b>Forest</b></p>';
+
+	// For each layer, the first variable is the layer, the second is the legend. The layer variable can be any kinds of layers that leaflet.js supports.
+	// var layers = {
+	//      layer1: {layer: layer1, legend: legend1},
+	//      layer2: {layer: layer2, legend: legend2}
+	//      ...
+	// }
+
+	var layers = {
+		ESRI: {layer: L.tileLayer('http://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}')},
+		counties: {
+			layer: L.geoJson.ajax('assets/counties.geojson', {
+				color: 'orange',
+				weight: 2,
+				opacity: 0.3
+			}), legend: county_legend
+		},
+		GEE: {
+			layer: L.tileLayer('http://earthengine.google.org/static/hansen_2013/tree_alpha/{z}/{x}/{y}.png'),
+			legend: forest_legend
+		},
+		satellite: {
+			layer: L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoiamFrb2J6aGFvIiwiYSI6ImNpcms2YWsyMzAwMmtmbG5icTFxZ3ZkdncifQ.P9MBej1xacybKcDN_jehvw', {
+				id: 'mapbox.satellite'
+			})
+		},
+		cartodb_light: {layer: L.tileLayer('http://cartodb-basemaps-{s}.global.ssl.fastly.net/light_all/{z}/{x}/{y}.png')}
+	};
+
+	var scenes = {
+		overview: {lat: 44.0000000, lng: -123.5000000, zoom: 7, name: 'Cover Page', layers: []},
+        oregon: {lat: 44.0000000, lng: -123.5000000, zoom: 7, name: 'Oregon State', layers: [layers.GEE, layers.counties]},
+        eugene: {lat: 44.0549563, lng: -123.0958048, zoom: 11, name: 'Eugene', layers: [layers.ESRI]},
+        swisshome: {lat: 44.056701, lng: -123.793780, zoom: 14, name: 'Swisshome', layers: [layers.ESRI]},
+        mapleton: {lat: 44.032894, lng: -123.857725, zoom: 14, name: 'Mapleton', layers: [layers.ESRI]},
+        florence: {lat: 43.969751, lng: -124.098914, zoom: 12, name: 'Florence', layers: [layers.ESRI]},
+		end: {lat: 44.0000000, lng: -123.5000000, zoom: 7, name: 'The End'}
+	};
+
+	$('#storymap').storymap({
+		scenes: scenes,
+		baselayer: layers.cartodb_light,
+		legend: true, // if you do not want a legend feature, you can simply not define the createLegend function.
+		credits: "Aradia Farmer",
+		loader: true,
+		scalebar: true,
+		flyo: true,
+		navwidget: false,
+
+		createMap: function () {
+			// create a map in the "map" div, set the view to a given place and zoom
+			var map = L.map($(".storymap-map")[0], {
+				zoomControl: false, scrollWheelZoom: false, fadeAnimation: true,
+				zoomAnimation: true
+			}).setView([44, -120], 7);
+
+
+
+			return map;
+		}
+	});
+</script>
+</body>
+</html>
